@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Eerste Bootstrap Website</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link href="style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body class="container">
+
+  <header>
+    <h1>Polochecker <small>Poloniex Exchange Analysis</small></h1>
+  </header>
+
+
+
+  <div class="panel-group" id="collapsable">
+    <div class="panel panel-primary">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Traded Currencies<i class="indicator glyphicon glyphicon-chevron-up  pull-right"></i>
+        </a>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <div class="checkbox"><label><input type="checkbox" id="toggleZero">Toggle zero balance</label></div>
+         </div>
+          <table class="table" id="currenciesTable">
+           <thead>
+             <th>Currency</th>
+             <th>Balance</th>
+             <th>Total change</th>
+             <th>Current balance change</th>
+           </thead>
+           <tbody>
+             
+           </tbody>          
+        </table>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Process inputs from Poloniex<i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
+        </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" aria-labelledby="headingTwo">
+        <div class="panel-body">
+          <div class="form-group" class="panel-body collapse" id="collapseOne">
+            <p>Copy from "Your Trade History". Start from [CUR]/BTC in the top left, and end at the last transaction date in the top right.</p>
+            <textarea id="inputJSON" rows=8 cols=40 class="form-control"></textarea>
+            <input type="button" value="Verstuur waarden" class="btn btn-default" id="inputJSONBtn">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Bootstrap mini JS -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- own script -->
+  <script src="script.js"></script>
+  <script src="process_input.js"></script>
+</body>
+
+</html>
